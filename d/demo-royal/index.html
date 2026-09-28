@@ -907,9 +907,10 @@
        ضغط زرّها. التسليح المبكر يجعل أوّل لمسة هي التي تُشغّلها. */
     rearmOnGesture(); };
   window.onYouTubeIframeAPIReady=function(){
-    player=new YT.Player('da3wa-yt',{videoId:"Hp8WTVqR_0U",
+    var music=window.__INVITE__.config.music;
+    player=new YT.Player('da3wa-yt',{videoId:music.youtubeVideoId,
       // يُجهَّز صامتاً؛ القالب يستطيع إبقاءه متوقفاً حتى تنتهي مقدمة الفيديو
-      playerVars:{autoplay:0,mute:1,controls:0,disablekb:1,fs:0,loop:1,playlist:"Hp8WTVqR_0U",playsinline:1,modestbranding:1,rel:0,start:0},
+      playerVars:{autoplay:0,mute:1,controls:0,disablekb:1,fs:0,loop:1,playlist:"Hp8WTVqR_0U",playsinline:1,modestbranding:1,rel:0,start:music.startSeconds||0},
       events:{onReady:function(){ ready=true; window.__da3waMusicReady=true;
         try{ player.mute(); if(suspended||isManual())player.pauseVideo(); else player.playVideo(); }catch(e){}
         if(isManual()){ if(primeRequested&&!goRequested)primeSilently(); if(goRequested){seekBeforeLoud=true;pump();} }
@@ -964,7 +965,7 @@
   <a class="dc-wa" href="https://wa.me/963992688759" target="_blank" rel="noopener" aria-label="اطلب عبر واتساب">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8"></path><path d="M9 8.5c.4 2.8 3.7 6 6.4 6.4l.9-1.5-2-1.2-1 .7c-.9-.4-1.9-1.4-2.3-2.3l.7-1-1.2-2-1.5.9Z" fill="currentColor"></path></svg>
   </a>
-  
+  <button class="dc-x" type="button" aria-label="إغلاق شريط الطلب" onclick="this.parentNode.remove()">×</button>
 </div>
 
 

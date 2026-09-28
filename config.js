@@ -15,5 +15,6 @@ window.__INVITE__ = { config: {
   story: { kicker:"حفل زفاف", primary:"محمد أديب طويل & رزان بطايحي", dateText:"يوم الجمعة، ١٨ كانون الأول ٢٠٢٦" },
   images: { hero: "", venue: "", background: "" },
   siteUrl: "https://mohamad-adib-tawil.github.io/wedding-temp-royal/d/demo-royal/",
+  music: { youtubeVideoId: "Hp8WTVqR_0U", startSeconds: 0, endSeconds: 0 },
   assets: { curtainWebp:"templates/royal/assets/curtain.webp", curtainJpg:"templates/royal/assets/curtain.jpg", share:"templates/royal/assets/share.jpg", gallery:["media/gallery/1.jpg","media/gallery/2.jpg","media/gallery/3.jpg","media/gallery/4.jpg"] }
 }};
