@@ -99,10 +99,11 @@ function buildContact(c) {
   const label = document.querySelector(".contact__label");
   if (label && c.contactLabel) label.textContent = c.contactLabel;
   if (!link) return;
-  if (c.contactPhone) {
-    link.href = `https://wa.me/${c.contactPhone.replace(/[^0-9]/g, "")}`;
+  const contactUrl = c.whatsappUrl || (c.contactPhone ? `https://wa.me/${c.contactPhone.replace(/[^0-9]/g, "")}` : "");
+  if (contactUrl) {
+    link.href = contactUrl;
     link.target = "_blank"; link.rel = "noopener";
-    link.textContent = c.contactName || c.contactPhone;
+    link.textContent = c.contactName || c.contactPhone || contactUrl;
   } else { document.getElementById("contactBox").style.display = "none"; }
 }
 
